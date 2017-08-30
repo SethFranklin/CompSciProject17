@@ -30,7 +30,7 @@ void main()
 	
 	vec3 Diffuse = diff * LightColor;
 	
-	float specularStrength = 5f * length(texture(SpecularMap, TextureUV).xyz);
+	float specularStrength = 5.0 * length(texture(SpecularMap, TextureUV).xyz);
 	
 	vec3 viewDir = normalize(vec3(0.0, 0.0, 20.0) - FragPosition);
 	vec3 reflectDir = reflect(-lightDir, norm);
@@ -41,7 +41,7 @@ void main()
 	vec4 TextureSample = texture(Texture, TextureUV);
 	
 	float distance    = length(LightPos - FragPosition);
-	float attenuation = 1.0 / (1.0f + 0.09f * distance + 0.032f * (distance * distance));    
+	float attenuation = 1.0 / (1.0 + 0.09 * distance + 0.032 * (distance * distance));    
 	
 	Ambient *= attenuation;
 	Diffuse *= attenuation;

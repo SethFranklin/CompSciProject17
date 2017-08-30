@@ -17,12 +17,12 @@ void main()
 
 	vec3 LightPos = vec3((LightPosition.x * 2.0 / 700.0) - 1.0, (LightPosition.y * 2.0 / 700.0) - 1.0, LightPosition.z);
 
-	float AmbientStrength = 1f;
+	float AmbientStrength = 1.0;
 
 	vec3 Ambient = AmbientStrength * LightColor;
 	
-	float distance    = length(LightPosition.xy - FragPosition.xy) / 100f;
-	float attenuation = 1.0 / (1.0f + 0.09f * distance + 0.032f * (distance * distance));    
+	float distance    = length(LightPosition.xy - FragPosition.xy) / 100.0;
+	float attenuation = 1.0 / (1.0 + 0.09 * distance + 0.032 * (distance * distance));    
 	
 	Ambient *= attenuation;
 	
